@@ -1,22 +1,32 @@
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
+import textSvg from '../assets/text.svg'
+import imageSvg from '../assets/image.svg'
+import codeSvg from '../assets/code.svg'
+import videoSvg from '../assets/video.svg'
+import emailSvg from '../assets/email.svg'
 
 function Dropdown({ label, items }) {
   return (
     <Menu as="div" className="relative inline-block text-left">
       <MenuButton className="inline-flex items-center gap-1 text-gray-700 hover:text-gray-900">
-        {label}
-        <ChevronDownIcon className="w-4 h-4" />
+        {({ open }) => (
+          <>
+            {label}
+            <ChevronDownIcon className={`w-4 h-4 transition-transform duration-300 ${open ? 'rotate-180' : ''}`} />
+          </>
+        )}
       </MenuButton>
 
-      <MenuItems className="absolute left-0 mt-2 w-40 origin-top-left bg-white border border-gray-200 rounded-md shadow-md focus:outline-none z-50">
-        <div className="py-1">
+      <MenuItems className="absolute left-0 mt-2 w-48 origin-top-left bg-white border border-gray-200 rounded-md shadow-md focus:outline-none z-50">
+        <div className="py-2">
           {items.map((item) => (
             <MenuItem key={item.label}>
               <a
                 href={item.href}
-                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                className="flex items-center px-5 py-3 text-sm text-gray-700 hover:bg-gray-100"
               >
+                {item.icon && <img src={item.icon} alt="" className="w-4 h-4 mr-2" />}
                 {item.label}
               </a>
             </MenuItem>
@@ -47,11 +57,11 @@ export default function Home() {
             <Dropdown
               label="Products"
               items={[
-                { label: "Text Generator", href: "/product-1" },
-                { label: "Image Generator", href: "/product-2" },
-                { label: "Code Generator", href: "/product-3" },
-                { label: "Video Generator", href: "/product-4" },
-                { label: "Email Generator", href: "/product-5" },
+                { label: "Text Generator", href: "/product-1", icon: textSvg },
+                { label: "Image Generator", href: "/product-2", icon: imageSvg },
+                { label: "Code Generator", href: "/product-3", icon: codeSvg },
+                { label: "Video Generator", href: "/product-4", icon: videoSvg },
+                { label: "Email Generator", href: "/product-5", icon: emailSvg },
               ]}
             />
 
@@ -72,6 +82,9 @@ export default function Home() {
             />
 
             <a href="#contact" className="text-gray-700 hover:text-gray-900 transition">Contact</a>
+          </nav>
+
+          <div className="hidden md:flex items-center gap-4">
             <button className=" text-gray-700 hover:text-purple-500 px-6 py-3 font-semibold   transition">
               Sign In
             </button>
@@ -79,7 +92,7 @@ export default function Home() {
             <button className="bg-purple-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-purple-600 transition">
               Get Started Free
             </button>
-          </nav>
+          </div>
 
 
           <button className="md:hidden text-gray-700 focus:outline-none">
@@ -227,9 +240,9 @@ export default function Home() {
 Core Features
   </h2>
   <p>
-    Unlock the Potential of Innovation. Discover the Advanced AI Tools Transforming Your Ideas into Reality with Unmatched Precision and Intelligence.
+    Unlock the Potential of Innovation. Discover the Advanced AI Tools
+    Transforming Your Ideas into Reality with Unmatched Precision and Intelligence.
   </p>
-
 
 </section>
 
