@@ -308,7 +308,7 @@ export default function Home() {
 
           <ul className="flex flex-wrap text-sm font-medium text-center text-body">
             <li className="me-2">
-              <a href="#" className="inline-block px-4 py-3 rounded-base hover:text-heading hover:bg-neutral-secondary-soft">
+              <a href="#" aria-current="page" className="inline-block px-4 py-3 rounded-base hover:text-heading hover:bg-neutral-secondary-soft">
 
                 <button className="flex items-center h-12 gap-2 px-4 py-3 text-sm font-medium transition-colors duration-200 rounded-full bg-white dark:text-white/90 dark:bg-white/10 text-gray-800">
                   <img src="/text1.svg" alt="" />    Text Generator
@@ -316,28 +316,28 @@ export default function Home() {
               </a>
             </li>
             <li className="me-2">
-              <a href="#" className="inline-block px-4 py-3 rounded-base hover:text-heading hover:bg-neutral-secondary-soft">
+              <a href="#" aria-current="page" className="inline-block px-4 py-3 rounded-base hover:text-heading hover:bg-neutral-secondary-soft">
                 <button className="flex items-center h-12 gap-2 px-4 py-3 text-sm font-medium transition-colors duration-200 rounded-full bg-white dark:text-white/90 dark:bg-white/10 text-gray-800">
                   <img src="/image1.svg" alt="" />       Image Generator
                 </button>
               </a>
             </li>
             <li className="me-2">
-              <a href="#" className="inline-block px-4 py-3 rounded-base hover:text-heading hover:bg-neutral-secondary-soft">
+              <a href="#" aria-current="page" className="inline-block px-4 py-3 rounded-base hover:text-heading hover:bg-neutral-secondary-soft">
                 <button className="flex items-center h-12 gap-2 px-4 py-3 text-sm font-medium transition-colors duration-200 rounded-full bg-white dark:text-white/90 dark:bg-white/10 text-gray-800">
                   <img src="/code1.svg" alt="" />    Code Generator
                 </button>
               </a>
             </li>
             <li className="me-2">
-              <a href="#" className="inline-block px-4 py-3 rounded-base hover:text-heading hover:bg-neutral-secondary-soft">
+              <a href="#" aria-current="page" className="inline-block px-4 py-3 rounded-base hover:text-heading hover:bg-neutral-secondary-soft">
                 <button className="flex items-center h-12 gap-2 px-4 py-3 text-sm font-medium transition-colors duration-200 rounded-full bg-white dark:text-white/90 dark:bg-white/10 text-gray-800">
                   <img src="/video1.svg" alt="" />   Video Generator
                 </button>
               </a>
             </li>
             <li>
-              <a href="#" className="inline-block px-4 py-3 rounded-base hover:text-heading hover:bg-neutral-secondary-soft">
+              <a href="#" aria-current="page" className="inline-block px-4 py-3 rounded-base hover:text-heading hover:bg-neutral-secondary-soft">
                 <button className="flex items-center h-12 gap-2 px-4 py-3 text-sm font-medium transition-colors duration-200 rounded-full bg-white dark:text-white/90 dark:bg-white/10 text-gray-800">
                   <img src="/email1.svg" alt="" />   Email Generator
                 </button>
@@ -349,14 +349,14 @@ export default function Home() {
             {/* <!-- Text Generator Tab --> */}
             <div x-show="activeTab === 'text'" class="p-6" >
               <div class="p-3 tab-img-overlay">
-                <img src="" alt="" class="w-full rounded-2xl block dark:hidden" />
+                <img src="https://ai-agent.preview.uideck.com/assets/images/tab-image/tab-image-1.jpg" alt="" class="w-full rounded-2xl block dark:hidden" />
               </div>
             </div>
 
             {/* <!-- Image Generator Tab --> */}
             <div x-show="activeTab === 'image'" class="p-6" >
               <div class="p-3 tab-img-overlay">
-                <img src="" alt="" class="w-full rounded-2xl block dark:hidden" />
+                <img src="https://ai-agent.preview.uideck.com/assets/images/tab-image/tab-image-2.jpg" alt="" class="w-full rounded-2xl block dark:hidden" />
 
               </div>
             </div>
@@ -364,7 +364,7 @@ export default function Home() {
             {/* <!-- Code Generator Tab --> */}
             <div x-show="activeTab === 'code'" class="p-6" >
               <div class="p-3 tab-img-overlay">
-                <img src="" alt="" class="w-full rounded-2xl block dark:hidden" />
+                <img src="https://ai-agent.preview.uideck.com/assets/images/tab-image/tab-image-3.jpg" alt="" class="w-full rounded-2xl block dark:hidden" />
 
               </div>
             </div>
@@ -372,7 +372,7 @@ export default function Home() {
             {/* <!-- Video Generator Tab --> */}
             <div x-show="activeTab === 'video'" class="p-6" >
               <div class="p-3 tab-img-overlay">
-                <img src="" alt="" class="w-full rounded-2xl block dark:hidden" />
+                <img src="https://ai-agent.preview.uideck.com/assets/images/tab-image/tab-image-4.jpg" alt="" class="w-full rounded-2xl block dark:hidden" />
 
               </div>
             </div>
@@ -380,7 +380,7 @@ export default function Home() {
             {/* <!-- Email Generator Tab --> */}
             <div x-show="activeTab === 'email'" class="p-6" >
               <div class="p-3 tab-img-overlay">
-                <img src="" alt="" class="w-full rounded-2xl block dark:hidden" />
+                <img src="https://ai-agent.preview.uideck.com/assets/images/tab-image/tab-image-5.jpg" alt="" class="w-full rounded-2xl block dark:hidden" />
 
               </div>
             </div>
