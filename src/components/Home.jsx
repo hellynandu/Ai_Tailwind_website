@@ -37,9 +37,9 @@ function Dropdown({ label, items }) {
   )
 }
 export default function Home() {
-            return (
-            <>
-              {/* ---------------- HEADER ---------------- */}
+  return (
+    <>
+      {/* ---------------- HEADER ---------------- */}
       <header className="fixed top-0 w-full bg-white backdrop-blur-sm shadow-md z-50 border-b border-gray-200">
         <div className="flex items-center justify-between px-6 py-6">
           <div id="logo">
@@ -109,7 +109,7 @@ export default function Home() {
       </header>
 
       {/* ---------------- HERO SECTION ---------------- */}
-      <section className="min-h-screen flex flex-col items-center justify-center mt-42 pb-12 bg-white text-center space-y-6 px-4">
+      <section className="min-h-screen flex flex-col items-center justify-center mt-42 pb-4 bg-white text-center space-y-6 px-4">
 
         {/* ICON + SUBTITLE */}
         <div className="flex items-center gap-3 border-2 border-purple-800 rounded-full px-4 py-2">
@@ -188,63 +188,208 @@ export default function Home() {
         <div className="hidden lg:block">
           <img
             src="https://ai-agent.preview.uideck.com/assets/images/hero/shape-right-1.svg"
-            className="absolute top-30 right-16 animate-pulse"
+            className="absolute top-30 right-16 animate-bounce"
             alt=""
           />
           <img
             src="https://ai-agent.preview.uideck.com/assets/images/hero/shape-left-1.svg"
-            className="absolute left-[145px] top-[298px] animate-pulse"
+            className="absolute left-[145px] top-[298px] animate-bounce"
             alt=""
           />
           <img
             src="https://ai-agent.preview.uideck.com/assets/images/hero/shape-left-2.svg"
-            className="absolute left-16 top-[70px] animate-pulse"
+            className="absolute left-16 top-[70px] animate-bounce"
             alt=""
           />
           <img
             src="https://ai-agent.preview.uideck.com/assets/images/hero/shape-right-2.svg"
-            className="absolute top-[316px] right-[298px] animate-pulse"
+            className="absolute top-[316px] right-[298px] animate-bounce"
             alt=""
-          />
-        </div>
-
-        <div className="w-236 bg-linear-to-br relative mt-20 p-0 flex justify-center items-center">
-          <img
-            src="https://ai-agent.preview.uideck.com/assets/images/hero/hero-img.jpg"
-            alt=""
-            className="w-236 rounded-2xl"
           />
         </div>
 
         {/* BRANDS */}
-        <div className="relative z-30 mx-auto m-0 p-0 w-full bg-linear-to-br from-purple-500 to-white">
-          <p className="text-center text-white text-lg font-medium mt-4">
+        <div className="relative z-30 mx-auto  w-full bg-[linear-gradient(to_bottom,#ffffff,#bc83f2)]">
+          <img src="https://ai-agent.preview.uideck.com/assets/images/hero/hero-img.jpg" alt="Hero" className="w-236 mx-auto justify-center items-center rounded-lg shadow-lg  py-5 px-4" />
+
+
+          <p className="text-center text-white text-lg font-medium mt-55">
             Trusted by worlds largest companies including...
           </p>
 
-          <div className="flex flex-wrap justify-center items-center gap-7 md:gap-14 mt-10">
+          <div className="flex  gap-4 md:gap-6 items-center justify-center px-4 py-6 ">
             {["br-1", "br-2", "br-3", "br-4", "br-5", "br-6", "br-7"].map((item) => (
               <img
                 key={item}
                 src={`https://ai-agent.preview.uideck.com/assets/images/brands/${item}.svg`}
-                className="transition hover:opacity-100"
+                className="h-10 w-auto items-center justify-center  transition hover:opacity-100"
                 alt=""
               />
             ))}
           </div>
         </div>
       </section>
+      <section className="min-h-screen flex flex-col items-center justify-center pb-4 bg-gray-100 space-y-6 px-4">
+        <div className="flex flex-col items-center justify-center mt-8 pb-4 bg-white text-center space-y-6 px-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-700">
+            Core Features
+          </h2>
+          <p>
+            Unlock the Potential of Innovation. Discover the Advanced AI Tools <br />
+            Transforming Your Ideas into Reality with Unmatched Precision and <br /> Intelligence.
+          </p>
+        </div>
 
-<section className="min-h-screen flex flex-col items-center justify-center mt-0 pb-12 bg-white text-center space-y-6 px-4">
-  <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-700">
-Core Features
-  </h2>
-  <p>
-    Unlock the Potential of Innovation. Discover the Advanced AI Tools
-    Transforming Your Ideas into Reality with Unmatched Precision and Intelligence.
-  </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4 pb-4">
+          {[
+            {
+              icon: "/content.svg",
+              title: "Seamless Content Creation AI",
+              description: "Let our AI-powered service simplify your content creation process. Start using AI today!"
+            },
+            {
+              icon: "/ideas.svg",
+              title: "Your Ideas, Powered by Our Technology",
+              description: "Discover how AI can transform your ideas into captivating content with our high-quality service."
+            },
+            {
+              icon: "/intelligent.svg",
+              title: "Intelligent Writing by Powerful AI",
+              description: "Effortlessly access AI-generated content for your blogs, websites, and more with our high-quality, convenient service."
+            },
+            {
+              icon: "/generation.svg",
+              title: "AI Generation Made Life Easier",
+              description: "Experience effortless content creation with our AI service. Write less, accomplish more."
 
-</section>
+
+            },
+            {
+              icon: "/ai.svg",
+              title: "Premium AI-Generated Content",
+              description: "Get expertly crafted content in no time with our AI service. Where quality meets speed."
+            },
+            {
+              icon: "/writer.svg",
+              title: "Super Fast AI Writing Companion",
+              description: "Partner with AI to create content that connects with your audience. Give it a try now."
+            }
+          ].map((feature, index) => (
+            <div key={index} className="core-feature-wrapper bg-white p-9  rounded-2xl border   border-gray-200 dark:border-white/3 dark:bg-white/5">
+              <div className="flex  gap-3 mb-4">
+
+                <div className="core-feature-icon bg-purple-300 rounded-full w-12 h-12 flex items-center  justify-center">
+                  <img src={feature.icon} alt="" />
+                </div>
+              </div>
+              <h3 className="mb-4 text-gray-800 dark:text-white/90 font-bold text-xl md:text-2xl max-w-[312px]">
+                {feature.title}
+              </h3>
+              <p className="text-gray-500 max-w-[312px] dark:text-gray-400">
+                {feature.description}
+              </p>
+            </div>
+          ))}
+        </div>
+
+      </section>
+
+      <section className="min-h-screen flex flex-col items-center justify-center pb-4 bg-white text-center space-y-6 px-4">
+        <div className="flex flex-col items-center justify-center mt-4   pb-4 bg-white text-center space-y-6 px-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-700">
+            All the AI tools you need, at <br />your Fingertips.
+          </h2>
+          <p>
+            Unlock the Potential of Innovation, Discover the Advanced AI Tools Transforming Your <br /> Ideas into Reality with Unmatched Precision and Intelligence.
+          </p>
+        </div>
+        <div className="border border-gray-300 rounded-full p-0 m-0 bg-gray-100">
+
+
+          <ul className="flex flex-wrap text-sm font-medium text-center text-body">
+            <li className="me-2">
+              <a href="#" className="inline-block px-4 py-3 rounded-base hover:text-heading hover:bg-neutral-secondary-soft">
+
+                <button className="flex items-center h-12 gap-2 px-4 py-3 text-sm font-medium transition-colors duration-200 rounded-full bg-white dark:text-white/90 dark:bg-white/10 text-gray-800">
+                  <img src="/text1.svg" alt="" />    Text Generator
+                </button>
+              </a>
+            </li>
+            <li className="me-2">
+              <a href="#" className="inline-block px-4 py-3 rounded-base hover:text-heading hover:bg-neutral-secondary-soft">
+                <button className="flex items-center h-12 gap-2 px-4 py-3 text-sm font-medium transition-colors duration-200 rounded-full bg-white dark:text-white/90 dark:bg-white/10 text-gray-800">
+                  <img src="/image1.svg" alt="" />       Image Generator
+                </button>
+              </a>
+            </li>
+            <li className="me-2">
+              <a href="#" className="inline-block px-4 py-3 rounded-base hover:text-heading hover:bg-neutral-secondary-soft">
+                <button className="flex items-center h-12 gap-2 px-4 py-3 text-sm font-medium transition-colors duration-200 rounded-full bg-white dark:text-white/90 dark:bg-white/10 text-gray-800">
+                  <img src="/code1.svg" alt="" />    Code Generator
+                </button>
+              </a>
+            </li>
+            <li className="me-2">
+              <a href="#" className="inline-block px-4 py-3 rounded-base hover:text-heading hover:bg-neutral-secondary-soft">
+                <button className="flex items-center h-12 gap-2 px-4 py-3 text-sm font-medium transition-colors duration-200 rounded-full bg-white dark:text-white/90 dark:bg-white/10 text-gray-800">
+                  <img src="/video1.svg" alt="" />   Video Generator
+                </button>
+              </a>
+            </li>
+            <li>
+              <a href="#" className="inline-block px-4 py-3 rounded-base hover:text-heading hover:bg-neutral-secondary-soft">
+                <button className="flex items-center h-12 gap-2 px-4 py-3 text-sm font-medium transition-colors duration-200 rounded-full bg-white dark:text-white/90 dark:bg-white/10 text-gray-800">
+                  <img src="/email1.svg" alt="" />   Email Generator
+                </button>
+              </a>
+            </li>
+          </ul>
+
+          <div class="overflow-hidden tab-img-bg rounded-4xl">
+            {/* <!-- Text Generator Tab --> */}
+            <div x-show="activeTab === 'text'" class="p-6" >
+              <div class="p-3 tab-img-overlay">
+                <img src="" alt="" class="w-full rounded-2xl block dark:hidden" />
+              </div>
+            </div>
+
+            {/* <!-- Image Generator Tab --> */}
+            <div x-show="activeTab === 'image'" class="p-6" >
+              <div class="p-3 tab-img-overlay">
+                <img src="" alt="" class="w-full rounded-2xl block dark:hidden" />
+
+              </div>
+            </div>
+
+            {/* <!-- Code Generator Tab --> */}
+            <div x-show="activeTab === 'code'" class="p-6" >
+              <div class="p-3 tab-img-overlay">
+                <img src="" alt="" class="w-full rounded-2xl block dark:hidden" />
+
+              </div>
+            </div>
+
+            {/* <!-- Video Generator Tab --> */}
+            <div x-show="activeTab === 'video'" class="p-6" >
+              <div class="p-3 tab-img-overlay">
+                <img src="" alt="" class="w-full rounded-2xl block dark:hidden" />
+
+              </div>
+            </div>
+
+            {/* <!-- Email Generator Tab --> */}
+            <div x-show="activeTab === 'email'" class="p-6" >
+              <div class="p-3 tab-img-overlay">
+                <img src="" alt="" class="w-full rounded-2xl block dark:hidden" />
+
+              </div>
+            </div>
+          </div>
+
+
+
+        </div>
+      </section>
 
 
 
