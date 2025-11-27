@@ -1,6 +1,6 @@
+import React, { useState } from 'react'
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
-import { useState } from 'react'
 import textSvg from '../assets/text.svg?raw'
 import imageSvg from '../assets/image.svg?raw'
 import codeSvg from '../assets/code.svg?raw'
@@ -27,7 +27,7 @@ function Dropdown({ label, items }) {
                 href={item.href}
                 className="flex items-center px-5 py-3 text-sm text-gray-700 hover:bg-gray-100"
               >
-                {item.icon && <div className="w-4 h-4 mr-2 shrink-0" dangerouslySetInnerHTML={{__html: item.icon}} />}
+                {item.icon && <div className="w-4 h-4 mr-2 shrink-0" dangerouslySetInnerHTML={{ __html: item.icon }} />}
                 {item.label}
               </a>
             </MenuItem>
@@ -95,51 +95,8 @@ export default function Home() {
             <a href="#contact" className="text-gray-700 hover:text-gray-900 transition">Contact</a>
           </nav>
 
-          {isMobileMenuOpen && (
-            <div className="md:hidden bg-white border-t border-gray-200 py-4">
-              <a href="#home" className="block px-6 py-2 text-gray-700 hover:text-gray-900">Home</a>
-              <div className="px-6 py-2">
-                <Dropdown
-                  label="Products"
-                  items={[
-                    { label: "Text Generator", href: "/product-1", icon: textSvg },
-                    { label: "Image Generator", href: "/product-2", icon: imageSvg },
-                    { label: "Code Generator", href: "/product-3", icon: codeSvg },
-                    { label: "Video Generator", href: "/product-4", icon: videoSvg },
-                    { label: "Email Generator", href: "/product-5", icon: emailSvg },
-                  ]}
-                />
-              </div>
-              <div className="px-6 py-2">
-                <Dropdown
-                  label="Pages"
-                  items={[
-                    { label: "Dashboard", href: "/about" },
-                    { label: "Pricing", href: "/pricing" },
-                    { label: "Blog Grid", href: "/blog" },
-                    { label: "Blog Details", href: "/blog-details" },
-                    { label: "Sign In", href: "/sign-in" },
-                    { label: "Sign Up", href: "/sign-up" },
-                    { label: "Reset Password", href: "/reset-password" },
-                    { label: "Privacy Policy", href: "/privacy" },
-                    { label: "404 Error", href: "/404" },
-                  ]}
-                />
-              </div>
-              <a href="#contact" className="block px-6 py-2 text-gray-700 hover:text-gray-900">Contact</a>
-              <div className="px-6 py-2">
-                <button className="block w-full text-gray-700 hover:text-purple-500 px-6 py-3 font-semibold">
-                  Sign In
-                </button>
-                <button className="block w-full bg-purple-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-purple-600 mt-2">
-                  Get Started Free
-                </button>
-              </div>
-            </div>
-          )}
-
           <div className="hidden md:flex items-center gap-4">
-            <button className=" text-gray-700 hover:text-purple-500 px-6 py-3 font-semibold   transition">
+            <button className="text-gray-700 hover:text-purple-500 px-6 py-3 font-semibold transition">
               Sign In
             </button>
 
@@ -147,7 +104,6 @@ export default function Home() {
               Get Started Free
             </button>
           </div>
-
 
           <button className="md:hidden text-gray-700 focus:outline-none" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -224,7 +180,7 @@ export default function Home() {
 
           <a
             href="https://www.youtube.com/watch?v=_iHmNaQBtKk"
-            className="rounded-full flex h-12 gap-3 items-center text-sm border  bg-purple-500 text-white border-gray-100 p-1.5 pr-6"
+            className="rounded-full flex h-12 gap-3 items-center text-sm border bg-purple-500 text-white border-gray-100 p-1.5 pr-6"
           >
             <span className="w-9 h-9 rounded-full from-purple-500 to-pink-400 inline-flex items-center justify-center text-sm font-medium">
               <svg width="16" height="17" viewBox="0 0 16 17" fill="none">
@@ -263,20 +219,19 @@ export default function Home() {
         </div>
 
         {/* BRANDS */}
-        <div className="relative z-30 mx-auto  w-full bg-[linear-gradient(to_bottom,#ffffff,#bc83f2)]">
-          <img src="https://ai-agent.preview.uideck.com/assets/images/hero/hero-img.jpg" alt="Hero" className="w-236 mx-auto justify-center items-center rounded-lg shadow-lg  py-5 px-4" />
-
+        <div className="relative z-30 mx-auto w-full bg-[linear-gradient(to_bottom,#ffffff,#bc83f2)]">
+          <img src="https://ai-agent.preview.uideck.com/assets/images/hero/hero-img.jpg" alt="Hero" className="w-236 mx-auto justify-center items-center rounded-lg shadow-lg py-5 px-4" />
 
           <p className="text-center text-white text-lg font-medium mt-55">
             Trusted by worlds largest companies including...
           </p>
 
-          <div className="flex  gap-4 md:gap-6 items-center justify-center px-4 py-6 ">
+          <div className="flex gap-4 md:gap-6 items-center justify-center px-4 py-6">
             {["br-1", "br-2", "br-3", "br-4", "br-5", "br-6", "br-7"].map((item) => (
               <img
                 key={item}
                 src={`https://ai-agent.preview.uideck.com/assets/images/brands/${item}.svg`}
-                className="h-10 w-auto items-center justify-center  transition hover:opacity-100"
+                className="h-10 w-auto items-center justify-center transition hover:opacity-100"
                 alt=""
               />
             ))}
