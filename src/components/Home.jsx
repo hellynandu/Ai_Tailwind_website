@@ -52,7 +52,7 @@ export default function Home() {
     <>
       {/* ---------------- HEADER ---------------- */}
       <header className="fixed top-0 w-full bg-white backdrop-blur-sm shadow-md z-50 border-b border-gray-200">
-        <div className="flex items-center justify-between px-6 py-6">
+        <div className="flex items-center justify-between px-4 md:px-6 py-4 md:py-6">
           <div id="logo">
             <a href="/">
               <img
@@ -111,15 +111,80 @@ export default function Home() {
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
+                d={isMobileMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
               />
             </svg>
           </button>
         </div>
+
+        {/* Mobile Menu */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden absolute top-full left-0 right-0 bg-white border-b border-gray-200 shadow-lg">
+            <div className="px-6 py-4 space-y-4">
+              <a href="#home" className="block text-gray-700 hover:text-gray-900 transition" onClick={() => setIsMobileMenuOpen(false)}>Home</a>
+
+              <div className="space-y-2">
+                <div className="font-semibold text-gray-700">Products</div>
+                {[
+                  { label: "Text Generator", href: "/product-1", icon: textSvg },
+                  { label: "Image Generator", href: "/product-2", icon: imageSvg },
+                  { label: "Code Generator", href: "/product-3", icon: codeSvg },
+                  { label: "Video Generator", href: "/product-4", icon: videoSvg },
+                  { label: "Email Generator", href: "/product-5", icon: emailSvg },
+                ].map((item) => (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    className="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {item.icon && <div className="w-4 h-4 mr-2 shrink-0" dangerouslySetInnerHTML={{ __html: item.icon }} />}
+                    {item.label}
+                  </a>
+                ))}
+              </div>
+
+              <div className="space-y-2">
+                <div className="font-semibold text-gray-700">Pages</div>
+                {[
+                  { label: "Dashboard", href: "/about" },
+                  { label: "Pricing", href: "/pricing" },
+                  { label: "Blog Grid", href: "/blog" },
+                  { label: "Blog Details", href: "/blog-details" },
+                  { label: "Sign In", href: "/sign-in" },
+                  { label: "Sign Up", href: "/sign-up" },
+                  { label: "Reset Password", href: "/reset-password" },
+                  { label: "Privacy Policy", href: "/privacy" },
+                  { label: "404 Error", href: "/404" },
+                ].map((item) => (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {item.label}
+                  </a>
+                ))}
+              </div>
+
+              <a href="#contact" className="block text-gray-700 hover:text-gray-900 transition" onClick={() => setIsMobileMenuOpen(false)}>Contact</a>
+
+              <div className="pt-4 border-t border-gray-200 space-y-2">
+                <button className="block w-full text-left text-gray-700 hover:text-purple-500 px-4 py-2 font-semibold transition" onClick={() => setIsMobileMenuOpen(false)}>
+                  Sign In
+                </button>
+                <button className="block w-full bg-purple-500 text-white px-4 py-2 rounded-full font-semibold hover:bg-purple-600 transition" onClick={() => setIsMobileMenuOpen(false)}>
+                  Get Started Free
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
       </header>
 
       {/* ---------------- HERO SECTION ---------------- */}
-      <section id="home" className="min-h-screen flex flex-col items-center justify-center mt-40 pb-4 bg-white text-center space-y-6 px-4">
+      <section id="home" className="min-h-screen flex flex-col items-center justify-center mt-20 md:mt-40 pb-8 md:pb-4 bg-white text-center space-y-4 md:space-y-6 px-4 md:px-6">
 
         {/* ICON + SUBTITLE */}
         <div className="flex items-center gap-3 border-2 border-purple-800 rounded-full px-4 py-2">
@@ -195,43 +260,47 @@ export default function Home() {
         </div>
 
         {/* FLOATING SHAPES */}
-        <div className="hidden lg:block">
+        <div className="hidden xl:block absolute inset-0 pointer-events-none">
           <img
             src="https://ai-agent.preview.uideck.com/assets/images/hero/shape-right-1.svg"
-            className="absolute top-30 right-16 animate-bounce"
+            className="absolute top-32 right-16  animate-bounce"
             alt=""
           />
           <img
             src="https://ai-agent.preview.uideck.com/assets/images/hero/shape-left-1.svg"
-            className="absolute left-[145px] top-[298px] animate-bounce"
+            className="absolute left-32 top-72  animate-bounce"
             alt=""
           />
           <img
             src="https://ai-agent.preview.uideck.com/assets/images/hero/shape-left-2.svg"
-            className="absolute left-16 top-[70px] animate-bounce"
+            className="absolute left-16 top-20  animate-bounce"
             alt=""
           />
           <img
             src="https://ai-agent.preview.uideck.com/assets/images/hero/shape-right-2.svg"
-            className="absolute top-[316px] right-[298px] animate-bounce"
+            className="absolute top-80 right-80  animate-bounce"
             alt=""
           />
         </div>
 
         {/* BRANDS */}
-        <div className="relative z-30 mx-auto w-full bg-[linear-gradient(to_bottom,#ffffff,#bc83f2)]">
-          <img src="https://ai-agent.preview.uideck.com/assets/images/hero/hero-img.jpg" alt="Hero" className="w-236 mx-auto justify-center items-center rounded-lg shadow-lg py-5 px-4" />
+        <div className="relative z-30 mx-auto w-full bg-[linear-gradient(to_bottom,#ffffff,#bc83f2)] px-4 py-8">
+          <img
+            src="https://ai-agent.preview.uideck.com/assets/images/hero/hero-img.jpg"
+            alt="Hero"
+            className="w-full max-w-md mx-auto rounded-lg shadow-lg"
+          />
 
-          <p className="text-center text-white text-lg font-medium mt-55">
+          <p className="text-center text-white text-base md:text-lg font-medium mt-8 md:mt-12">
             Trusted by worlds largest companies including...
           </p>
 
-          <div className="flex gap-4 md:gap-6 items-center justify-center px-4 py-6">
+          <div className="flex flex-wrap gap-4 md:gap-6 items-center justify-center px-4 py-6">
             {["br-1", "br-2", "br-3", "br-4", "br-5", "br-6", "br-7"].map((item) => (
               <img
                 key={item}
                 src={`https://ai-agent.preview.uideck.com/assets/images/brands/${item}.svg`}
-                className="h-10 w-auto items-center justify-center transition hover:opacity-100"
+                className="h-8 md:h-10 w-auto transition hover:opacity-100"
                 alt=""
               />
             ))}
@@ -249,50 +318,49 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4 pb-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 px-4 pb-8">
           {[
             {
               icon: '/content.svg',
-              title: "Seamless Content Creation AI--",
+              title: "Seamless Content Creation AI",
               description: "Let our AI-powered service simplify your content creation process. Start using AI today!"
             },
             {
               icon: '/ideas.svg',
-              title: "Your Ideas, Powered by Our Technology--",
+              title: "Your Ideas, Powered by Our Technology",
               description: "Discover how AI can transform your ideas into captivating content with our high-quality service."
             },
             {
               icon: '/intelligent.svg',
-              title: "Intelligent Writing by Powerful AI--",
+              title: "Intelligent Writing by Powerful AI",
               description: "Effortlessly access AI-generated content for your blogs, websites, and more with our high-quality, convenient service."
             },
             {
               icon: '/generation.svg',
-              title: "AI Generation Made Life--",
+              title: "AI Generation Made Easy",
               description: "Experience effortless content creation with our AI service. Write less, accomplish more."
             },
             {
               icon: '/ai.svg',
-              title: "Premium AI-Generated Content--",
+              title: "Premium AI-Generated Content",
               description: "Get expertly crafted content in no time with our AI service. Where quality meets speed."
             },
             {
               icon: '/writer.svg',
-              title: "Super Fast AI Writing Companion--",
+              title: "Super Fast AI Writing Companion",
               description: "Partner with AI to create content that connects with your audience. Give it a try now."
             }
           ].map((feature, index) => (
-            <div key={index} className="core-feature-wrapper bg-gray-100 p-9  rounded-2xl border   border-gray-200 dark:border-white/3 dark:bg-white/5">
-              <div className="flex  gap-3 mb-4">
-
-                <div className="core-feature-icon bg-purple-600 rounded-full w-12 h-12 flex items-center  justify-center">
-                  <img src={feature.icon} alt="" />
+            <div key={index} className="bg-white p-6 md:p-8 rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+              <div className="flex gap-3 mb-4">
+                <div className="bg-purple-600 rounded-full w-12 h-12 flex items-center justify-center shrink-0">
+                  <img src={feature.icon} alt="" className="w-6 h-6" />
                 </div>
               </div>
-              <h3 className="mb-4 text-gray-800  dark:text-white/90 font-bold text-xl md:text-2xl max-w-[312px]">
+              <h3 className="mb-3 text-gray-800 font-bold text-lg md:text-xl leading-tight">
                 {feature.title}
               </h3>
-              <p className="text-gray-500 max-w-[312px] dark:text-gray-400">
+              <p className="text-gray-600 text-sm md:text-base leading-relaxed">
                 {feature.description}
               </p>
             </div>
@@ -310,9 +378,9 @@ export default function Home() {
             Unlock the Potential of Innovation, Discover the Advanced AI Tools Transforming Your <br /> Ideas into Reality with Unmatched Precision and Intelligence.
           </p>
         </div>
-        <div className="w-full max-w-4xl mx-auto">
-          <div className="border border-gray-300 rounded-full p-2 bg-gray-100 mb-8">
-            <div className="flex flex-wrap justify-center">
+        <div className="w-full max-w-6xl mx-auto px-4">
+          <div className="border border-gray-300 rounded-full p-2 bg-gray-100 mb-8 overflow-x-auto">
+            <div className="flex justify-center min-w-max">
               {[
                 { id: 'text', label: 'Text Generator', icon: '/text1.svg' },
                 { id: 'image', label: 'Image Generator', icon: '/image1.svg' },
@@ -323,21 +391,22 @@ export default function Home() {
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`flex items-center gap-2 px-4 py-3 text-sm font-medium transition-colors duration-200 rounded-full mx-1 ${activeTab === tab.id
-                    ? 'bg-white text-black'
-                    : 'bg-gray-100 text-black'
+                  className={`flex items-center gap-2 px-3 md:px-4 py-2 md:py-3 text-xs md:text-sm font-medium transition-colors duration-200 rounded-full mx-1 whitespace-nowrap ${activeTab === tab.id
+                    ? 'bg-white text-black shadow-sm'
+                    : 'bg-gray-100 text-black hover:bg-gray-200'
                     }`}
                 >
-                  <img src={tab.icon} alt="" className="w-4 h-4" />
-                  {tab.label}
+                  <img src={tab.icon} alt="" className="w-3 h-3 md:w-4 md:h-4" />
+                  <span className="hidden sm:inline">{tab.label}</span>
+                  <span className="sm:hidden">{tab.label.split(' ')[0]}</span>
                 </button>
               ))}
             </div>
           </div>
 
-          <div className="overflow-hidden bg-gray-100 rounded-3xl p-6">
+          <div className="overflow-hidden bg-gray-100 rounded-3xl p-4 md:p-6">
             {activeTab === 'text' && (
-              <div className="p-3">
+              <div className="p-2 md:p-3">
                 <img
                   src="https://ai-agent.preview.uideck.com/assets/images/tab-image/tab-image-1.jpg"
                   alt="Text Generator"
@@ -346,7 +415,7 @@ export default function Home() {
               </div>
             )}
             {activeTab === 'image' && (
-              <div className="p-3">
+              <div className="p-2 md:p-3">
                 <img
                   src="https://ai-agent.preview.uideck.com/assets/images/tab-image/tab-image-2.jpg"
                   alt="Image Generator"
@@ -355,7 +424,7 @@ export default function Home() {
               </div>
             )}
             {activeTab === 'code' && (
-              <div className="p-3">
+              <div className="p-2 md:p-3">
                 <img
                   src="https://ai-agent.preview.uideck.com/assets/images/tab-image/tab-image-3.jpg"
                   alt="Code Generator"
@@ -364,7 +433,7 @@ export default function Home() {
               </div>
             )}
             {activeTab === 'video' && (
-              <div className="p-3">
+              <div className="p-2 md:p-3">
                 <img
                   src="https://ai-agent.preview.uideck.com/assets/images/tab-image/tab-image-4.jpg"
                   alt="Video Generator"
@@ -373,7 +442,7 @@ export default function Home() {
               </div>
             )}
             {activeTab === 'email' && (
-              <div className="p-3">
+              <div className="p-2 md:p-3">
                 <img
                   src="https://ai-agent.preview.uideck.com/assets/images/tab-image/tab-image-5.jpg"
                   alt="Email Generator"
