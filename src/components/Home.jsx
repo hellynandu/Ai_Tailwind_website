@@ -6,6 +6,8 @@ import imageSvg from '../assets/image.svg'
 import codeSvg from '../assets/code.svg'
 import videoSvg from '../assets/video.svg'
 import emailSvg from '../assets/email.svg'
+import reactSvg from '../assets/react.svg'
+import writerSvg from '../assets/writer.svg'
 
 function Dropdown({ label, items }) {
   return (
@@ -297,40 +299,40 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4 pb-4">
           {[
             {
-              icon: textSvg,
-              title: "Seamless Content Creation AI",
+              icon: '/content.svg',
+              title: "Seamless Content Creation AI--",
               description: "Let our AI-powered service simplify your content creation process. Start using AI today!"
             },
             {
-              icon: imageSvg,
-              title: "Your Ideas, Powered by Our Technology",
+              icon: '/ideas.svg',
+              title: "Your Ideas, Powered by Our Technology--",
               description: "Discover how AI can transform your ideas into captivating content with our high-quality service."
             },
             {
-              icon: codeSvg,
-              title: "Intelligent Writing by Powerful AI",
+              icon: '/intelligent.svg',
+              title: "Intelligent Writing by Powerful AI--",
               description: "Effortlessly access AI-generated content for your blogs, websites, and more with our high-quality, convenient service."
             },
             {
-              icon: videoSvg,
-              title: "AI Generation Made Life Easier",
+              icon: '/generation.svg',
+              title: "AI Generation Made Life--",
               description: "Experience effortless content creation with our AI service. Write less, accomplish more."
             },
             {
-              icon: emailSvg,
-              title: "Premium AI-Generated Content",
+              icon: '/ai.svg',
+              title: "Premium AI-Generated Content--",
               description: "Get expertly crafted content in no time with our AI service. Where quality meets speed."
             },
             {
-              icon: textSvg,
-              title: "Super Fast AI Writing Companion",
+              icon: '/writer.svg',
+              title: "Super Fast AI Writing Companion--",
               description: "Partner with AI to create content that connects with your audience. Give it a try now."
             }
           ].map((feature, index) => (
             <div key={index} className="core-feature-wrapper bg-gray-100 p-9  rounded-2xl border   border-gray-200 dark:border-white/3 dark:bg-white/5">
               <div className="flex  gap-3 mb-4">
 
-                <div className="core-feature-icon bg-purple-300 rounded-full w-12 h-12 flex items-center  justify-center">
+                <div className="core-feature-icon bg-purple-600 rounded-full w-12 h-12 flex items-center  justify-center">
                   <img src={feature.icon} alt="" />
                 </div>
               </div>
@@ -1249,6 +1251,8 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+
 
 
 

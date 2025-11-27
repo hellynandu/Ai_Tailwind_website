@@ -26,8 +26,8 @@
                             <feBlend mode="normal" in2="shape" result="effect1_innerShadow_9289_13240"></feBlend>
                           </filter>
                           <radialGradient id="paint0_radial_9289_13240" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(18.8131 22.0965) rotate(-60.1772) scale(18.6241 18.6153)">
-                            <stop stop-color="#7F68FF"></stop>
-                            <stop offset="1" stop-color="#BEB2FF"></stop>
+                            <stop stop-color="#FFFFFF"></stop>
+                            <stop offset="1" stop-color="#FFFFFF"></stop>
                           </radialGradient>
                         </defs>
                       </svg>
